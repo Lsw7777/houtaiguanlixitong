@@ -5,6 +5,7 @@ import Login from '../components/Login.vue'
 import Home from '../components/Home.vue'
 // import 后面跟导入的内容，../表示父级目录
 import Welcome from '../components/welcome.vue'
+import Users from '../components/user/Users.vue'
 
 Vue.use(Router)
 // 将引入的vue-router全局注册
@@ -31,10 +32,16 @@ const router = new Router({
       redirect: '/welcome',
       // 原地址跳转到的新的地址
       children: [{
-        path: '/welcome',
-        component: Welcome,
-        // 设置该新的地址要展示的内容组件
-      }]
+          path: '/welcome',
+          component: Welcome,
+          // 这是一个子组件显示在一个大组件内部
+
+        }, {
+          path: '/users',
+          component: Users
+        },
+
+      ]
     }
 
   ]

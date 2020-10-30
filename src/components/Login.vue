@@ -94,18 +94,20 @@
                     // 使用箭头函数返回结果，确定用户名密码是否正确
                     const {
                         data: res
+                        // 拿到的res是一个对象，自定义名称，res.data就是具体的服务器数据
                     } = await this.$http.post("login", this.loginForm)
                     // 这里面的login是请求的地址URL，是固定格式，后面的是参数，也就是 username和password
                     // 下面的200是服务器返回的成功时的返回码
                     if (res.meta.status !== 200) return this.$message.error('登录失败，请检查用户名和密码');
-                    this.$message
-                        .success('登录成功！')
+                    this.$message.success('登录成功！')
                     // 1. 将登录成功之后的 token，保存到客户端的 sessionStorage 中
                     // 1.1 项目中除了登录之外的其他API接口，必须在登录之后才能访问
                     // 1.2 token 只应在当前网站打开期间生效，所以将 token 保存在 sessionStorage 中
                     window.sessionStorage.setItem('token', res.data.token)
                     // 2. 通过编程式导航跳转到后台主页，路由地址是 /home
                     this.$router.push('/home')
+                    // this.$router 相当于一个全局的路由器对象，包含了很多属性和对象（比如 history 对象）
+                    // 任何页面都可以调用其 this.$router.push(), replace(), go() 等方法。
 
 
                 })

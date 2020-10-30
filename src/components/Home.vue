@@ -15,8 +15,10 @@
         <el-container>
             <!-- 侧边栏 -->
             <el-aside :width="isCollapse ? '64px' : '230px'">
-                <div class="toggle-button" @click="toggleCollapse">〈 〉</div>
-                <!-- 侧边栏菜单区域  unique-opened 是否只保持一个子菜单的展开-->
+                <div class="toggle-button" @click="toggleCollapse">&lt; &gt;</div>
+                <!-- 侧边栏菜单区域  unique-opened 是否只保持同时只能有一个子菜单的展开 默认代表true-->
+                <!-- active-text-color 当前激活菜单的文字颜色 collapse-transition是否开启折叠动画-->
+                <!-- router开启路由，下面的菜单点击就可以跳转到指定内容 -->
                 <el-menu background-color="#e4f5ef" text-color="black" active-text-color="#40a9ff" unique-opened
                     :collapse="isCollapse" :collapse-transition="false" router :default-active="activePath">
                     <!-- 这是一级菜单 -->
@@ -30,6 +32,7 @@
                         </template>
 
                         <!-- 二级菜单 -->
+                        <!-- :index="'/' + subItem.path" 路由的跳转页面 -->
                         <el-menu-item :index="'/' + subItem.path" v-for="subItem in item.children" :key="subItem.id"
                             @click="saveNavState('/' + subItem.path)">
                             <template slot="title">
@@ -145,17 +148,22 @@
         }
     }
 
+    .el-submenu span {
+        font-size: 18px;
+    }
+
+
     .el-main {
         background-color: #c8ebdf;
     }
 
     .toggle-button {
-        color: rgb(15, 220, 247);
+        color: black;
         text-align: center;
-        font-size: 20px;
+        font-size: 21px;
         height: 40px;
         line-height: 40px;
-        background-color: rgb(179, 255, 245);
+        background-color: rgb(168, 219, 200);
         cursor: pointer
     }
 </style>

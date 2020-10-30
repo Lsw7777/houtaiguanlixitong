@@ -11,6 +11,9 @@ import axios from 'axios'
 
 // 配置请求的根路径
 axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
+Vue.prototype.$http = axios
+// Vue.prototype，定义的是原型,这样可以就可以直接使用this.$http.get('请求地址')来直接发送请求！
+// 原本的格式是  axios.get().then().catch()
 
 
 axios.interceptors.request.use(config => {
@@ -22,9 +25,6 @@ axios.interceptors.request.use(config => {
 
 
 
-
-Vue.prototype.$http = axios
-// Vue.prototype，定义的是原型,可以就可以使用this.$http.get('请求地址')来直接发送请求！
 
 
 Vue.config.productionTip = false

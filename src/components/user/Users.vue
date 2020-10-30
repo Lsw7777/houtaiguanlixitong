@@ -9,7 +9,7 @@
         </el-breadcrumb>
 
         <!-- 卡片视图区域 -->
-        <el-card>
+        <el-card class="el-card1">
             <!-- 这是搜索区 -->
             <el-row :gutter="20">
                 <!-- :gutter 每一栏之间的间隔 -->
@@ -26,7 +26,7 @@
             </el-row>
 
             <!-- 用户列表区域 -->
-            <el-table :data="userlist" border stripe>
+            <el-table :data="userlist" border stripe class="el-table1">
                 <el-table-column type="index"></el-table-column>
                 <el-table-column label="姓名" prop="username"></el-table-column>
                 <el-table-column label="邮箱" prop="email"></el-table-column>

@@ -6,6 +6,8 @@ import Home from '../components/Home.vue'
 // import 后面跟导入的内容，../表示父级目录
 import Welcome from '../components/welcome.vue'
 import Users from '../components/user/Users.vue'
+import Power from '../components/power/Power.vue'
+import Roles from '../components/power/Roles.vue'
 
 Vue.use(Router)
 // 将引入的vue-router全局注册
@@ -40,7 +42,15 @@ const router = new Router({
           path: '/users',
           component: Users
         },
-
+        {
+          path: '/rights',
+          // 这个具体的网址要看点击后跳转页面的后面是什么就写什么
+          component: Power
+        },
+        {
+          path: '/roles',
+          component: Roles
+        }
       ]
     }
 

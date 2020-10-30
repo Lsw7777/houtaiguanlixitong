@@ -9,7 +9,7 @@ import axios from 'axios'
 
 
 
-// 配置请求的根路径
+// 配置请求的根路径，即公共的请求头，之后只需加个/right这种具体的后续即可
 axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
 Vue.prototype.$http = axios
 // Vue.prototype，定义的是原型,这样可以就可以直接使用this.$http.get('请求地址')来直接发送请求！

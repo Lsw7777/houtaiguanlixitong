@@ -161,15 +161,19 @@
                 // 获取用户列表的参数对象,也可以写在下面axios第二个参数中
                 queryInfo: {
                     query: '',
-                    // 当前的页数
+                    //  查询参数，有时可以没有，由接口具体要求决定
                     pagenum: 1,
-                    // 当前每页显示多少条数据
+                    // 当前的页码  一般要有，由接口具体要求决定
                     pagesize: 4
+                    // 每页显示条数，一般要有，由接口具体要求决定
                 },
                 userlist: [],
+                // 用户列表，默认为空数组，
                 total: 0,
-                // 控制添加用户对话框的显示与隐藏
+                // 代表数据总条数，默认为0，这两条内容都在下面函数调用后返回
+
                 addDialogVisible: false,
+                // 控制添加用户对话框的显示与隐藏
                 // 添加用户的表单数据
                 addForm: {
                     username: '',
@@ -281,6 +285,7 @@
                 // if() {}里面代码的执行后，后面的代码不管条件也要执行，else可以省略
                 this.userlist = res.data.users
                 this.total = res.data.total
+                // 对应上面两个空着的数据，返回上面return中
                 console.log(res)
             },
             // 监听 pagesize 改变的事件

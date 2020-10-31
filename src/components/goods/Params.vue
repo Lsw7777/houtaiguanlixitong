@@ -1,15 +1,16 @@
 <template>
-    <div><img src="../assets/welcome.jpg" alt=""></div>
+    <div>
+        <h3>参数</h3>
+    </div>
 </template>
 
 <script>
     export default {
 
+
     }
 </script>
 
 <style lang="less" scoped>
-    img {
-        width: 800px;
-    }
+    // 样式节点
 </style>

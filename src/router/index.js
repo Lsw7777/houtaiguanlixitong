@@ -8,6 +8,14 @@ import Welcome from '../components/welcome.vue'
 import Users from '../components/user/Users.vue'
 import Power from '../components/power/Power.vue'
 import Roles from '../components/power/Roles.vue'
+import Goods from '../components/goods/Goods.vue'
+import Params from '../components/goods/Params.vue'
+import GoodsList from '../components/goods/List.vue'
+import Add from '../components/goods/Add.vue'
+import Order from '../components/order/Order.vue'
+import Report from '../components/report/Report.vue'
+
+
 
 Vue.use(Router)
 // 将引入的vue-router全局注册
@@ -50,6 +58,27 @@ const router = new Router({
         {
           path: '/roles',
           component: Roles
+        }, {
+          path: '/categories',
+          component: Goods
+        },
+        {
+          path: '/params',
+          component: Params
+        },
+        {
+          path: '/goods',
+          component: GoodsList
+        }, {
+          path: '/goods/add',
+          component: Add
+        }, {
+          path: '/orders',
+          component: Order
+        },
+        {
+          path: '/reports',
+          component: Report
         }
       ]
     }

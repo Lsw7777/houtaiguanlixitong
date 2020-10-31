@@ -1,5 +1,5 @@
 <template>
-    <div><img src="../assets/welcome.jpg" alt=""></div>
+    <h1>商品分类部分</h1>
 </template>
 
 <script>
@@ -9,7 +9,7 @@
 </script>
 
 <style lang="less" scoped>
-    img {
-        width: 800px;
+    h1 {
+        font-size: 30px;
     }
 </style>
